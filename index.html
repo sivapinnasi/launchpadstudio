@@ -1,164 +1,260 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>LaunchPad Studio — We Build, You Grow.</title>
-  <meta name="description" content="LaunchPad Studio — fast, modern, conversion-focused websites for startups and small businesses. Pricing ₹3,000 - ₹15,000." />
-  <meta name="theme-color" content="#2563eb" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>LaunchPad Studio — We Build, You Grow.</title>
+    <meta
+      name="description"
+      content="LaunchPad Studio — We create fast, modern, and conversion-focused websites for startups and small businesses. Starting at ₹3,000."
+    />
+    <meta name="theme-color" content="#2563eb" />
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Inter font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Inter font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Lucide icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Lucide icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { inter: ['Inter', 'sans-serif'] },
+            colors: {
+              'lp-blue': '#2563eb',
+              'lp-indigo': '#6d28d9',
+              'lp-pink': '#ec4899',
+            },
+          },
+        },
+      };
+    </script>
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { inter: ['Inter', 'sans-serif'] },
-          colors: {
-            'lp-blue': '#2563eb',
-            'lp-indigo': '#6d28d9',
-            'lp-pink': '#ec4899'
-          }
-        }
+    <style>
+      html {
+        scroll-behavior: smooth;
       }
-    }
-  </script>
-
-  <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: #0f1724; color: #e6eef8; }
-    .glass { background: rgba(15,23,36,0.55); backdrop-filter: blur(6px); }
-    input, textarea { transition: all 0.2s; }
-    input:focus, textarea:focus { border-color: #2563eb; outline: none; }
-  </style>
-</head>
-<body class="overflow-x-hidden">
-
-  <!-- NAV -->
-  <nav class="sticky top-0 z-50 glass border-b border-slate-800">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#home" class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-lp-blue to-lp-indigo flex items-center justify-center text-white font-bold shadow-lg">LP</div>
-        <div class="hidden sm:block">
-          <div class="text-white font-semibold">LaunchPad Studio</div>
-          <div class="text-xs text-slate-400 -mt-1">We Build, You Grow.</div>
-        </div>
-      </a>
-
-      <div class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#services" class="hover:text-white text-slate-300">Services</a>
-        <a href="#packages" class="hover:text-white text-slate-300">Packages</a>
-        <a href="#addons" class="hover:text-white text-slate-300">Add-Ons</a>
-        <a href="#contact" class="hover:text-white text-slate-300">Contact</a>
-        <a href="#contact" class="ml-2 inline-flex items-center gap-2 bg-lp-blue hover:bg-lp-indigo text-white px-4 py-2 rounded-lg shadow">Contact Us</a>
-      </div>
-
-      <!-- mobile menu -->
-      <div class="md:hidden">
-        <button id="mobileBtn" class="p-2 rounded-md bg-slate-800 glass">
-          <svg xmlns="http://www.w3.org/2000/svg" class="lucide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- mobile menu panel -->
-    <div id="mobileMenu" class="hidden md:hidden bg-slate-900/90 border-t border-slate-700">
-      <div class="flex flex-col gap-2 px-6 py-4 text-center">
-        <a href="#services" class="py-2">Services</a>
-        <a href="#packages" class="py-2">Packages</a>
-        <a href="#addons" class="py-2">Add-Ons</a>
-        <a href="#contact" class="py-2">Contact</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <header id="home" class="pt-16 pb-20">
-    <div class="max-w-6xl mx-auto px-6 text-center md:text-left">
-      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">LaunchPad Studio</h1>
-      <p class="text-lg md:text-xl text-slate-300 mb-6">We Build, You Grow. Fast, modern websites that help your business convert.</p>
-      <div class="flex justify-center md:justify-start gap-4">
-        <a href="#contact" class="inline-flex items-center gap-2 bg-lp-blue hover:bg-lp-indigo px-5 py-3 rounded-lg shadow text-white font-semibold">Contact Us</a>
-        <a href="#services" class="inline-flex items-center gap-2 border border-slate-700 px-5 py-3 rounded-lg text-slate-200 hover:bg-slate-800">View Services</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- SERVICES / PACKAGES / ADDONS / WHY sections remain same as your version -->
-  <!-- (You can keep them as they are for design consistency) -->
-
-  <!-- CONTACT -->
-  <section id="contact" class="py-16 border-t border-slate-800 bg-slate-900/30">
-    <div class="max-w-3xl mx-auto px-6">
-      <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 shadow-lg text-center">
-        <h3 class="text-2xl font-bold mb-3">Ready to Launch?</h3>
-        <p class="text-slate-300 mb-6">Tell us about your project, and we’ll get in touch within 24 hours.</p>
-
-        <form id="contactForm" class="grid grid-cols-1 gap-4 max-w-2xl mx-auto">
-          <div class="grid sm:grid-cols-2 gap-4">
-            <input name="name" required placeholder="Your name" class="p-3 rounded-lg bg-slate-900 border border-slate-700" />
-            <input name="phone" placeholder="Phone / WhatsApp" class="p-3 rounded-lg bg-slate-900 border border-slate-700" />
+      body {
+        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto,
+          'Helvetica Neue', Arial;
+        background: #0f1724;
+        color: #e6eef8;
+      }
+      .glass {
+        background: rgba(15, 23, 36, 0.55);
+        backdrop-filter: blur(6px);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="sticky top-0 z-50 bg-slate-900/70 backdrop-blur border-b border-slate-800">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="#home" class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 rounded-full bg-gradient-to-br from-lp-blue to-lp-indigo flex items-center justify-center text-white font-bold shadow-lg"
+          >
+            LP
           </div>
-          <input name="email" type="email" required placeholder="Email" class="p-3 rounded-lg bg-slate-900 border border-slate-700" />
-          <textarea name="message" rows="4" required placeholder="Project details" class="p-3 rounded-lg bg-slate-900 border border-slate-700"></textarea>
+          <div class="hidden sm:block">
+            <div class="text-white font-semibold">LaunchPad Studio</div>
+            <div class="text-xs text-slate-400 -mt-1">We Build, You Grow.</div>
+          </div>
+        </a>
 
-          <button type="submit" class="bg-lp-blue hover:bg-lp-indigo px-5 py-3 rounded-lg text-white font-semibold shadow">Send Message</button>
-        </form>
-
-        <p class="text-slate-400 text-sm mt-4">Or email us directly at <a href="mailto:launchpadstudio@gmail.com" class="text-lp-blue">launchpadstudio@gmail.com</a></p>
+        <div class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#services" class="hover:text-white text-slate-300">Services</a>
+          <a href="#packages" class="hover:text-white text-slate-300">Packages</a>
+          <a href="#addons" class="hover:text-white text-slate-300">Add-Ons</a>
+          <a href="#contact" class="ml-2 inline-flex items-center gap-2 bg-lp-blue hover:bg-lp-indigo text-white px-4 py-2 rounded-lg shadow">Contact</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- FOOTER -->
-  <footer class="py-8 text-center text-slate-400 border-t border-slate-800">
-    <p>✨ LaunchPad Studio — We Build, You Grow.</p>
-    <p class="text-sm">© <span id="year"></span> LaunchPad Studio. All rights reserved.</p>
-  </footer>
+    <!-- HERO -->
+    <header id="home" class="pt-16 pb-20">
+      <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">
+            We Build, You Grow.
+          </h1>
+          <p class="text-slate-300 mb-6 leading-relaxed max-w-md">
+            LaunchPad Studio crafts fast, modern, and professional websites that
+            help small businesses and startups grow online — starting at just ₹3,000.
+          </p>
 
-  <script>
-    lucide.createIcons();
+          <div class="flex gap-3 flex-wrap">
+            <a
+              href="#services"
+              class="inline-flex items-center gap-3 bg-lp-blue hover:bg-lp-indigo px-5 py-3 rounded-lg shadow text-white font-semibold"
+              >Explore Services</a
+            >
+            <a
+              href="#contact"
+              class="inline-flex items-center gap-2 border border-slate-700 px-5 py-3 rounded-lg text-slate-200 hover:bg-slate-800"
+              >Get in Touch</a
+            >
+          </div>
+        </div>
 
-    // --- EmailJS Setup ---
-    (function() {
-      emailjs.init("YOUR_EMAILJS_PUBLIC_KEY"); // <-- Replace this with your EmailJS public key
-    })();
+        <div class="order-first md:order-last">
+          <div
+            class="rounded-2xl overflow-hidden shadow-xl border border-slate-700 glass p-6"
+          >
+            <div
+              class="h-56 bg-gradient-to-br from-lp-blue to-lp-indigo rounded-lg flex items-center justify-center"
+            >
+              <div class="text-white text-center px-6">
+                <div class="text-2xl font-bold">LaunchPad Studio</div>
+                <div class="text-sm mt-2 opacity-90">
+                  Clean designs • Fast builds • Conversion-ready
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
 
-    document.getElementById("contactForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-        from_name: this.name.value,
-        from_email: this.email.value,
-        phone: this.phone.value,
-        message: this.message.value
-      }).then(() => {
-        alert("✅ Message sent successfully! We'll contact you soon.");
-        this.reset();
-      }).catch(() => {
-        alert("❌ Failed to send message. Please try again or email us directly.");
-      });
-    });
+    <!-- SERVICES -->
+    <section id="services" class="py-16 bg-slate-900/40 border-t border-slate-800">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-10 text-white">
+          Our Services
+        </h2>
 
-    // --- Mobile menu toggle ---
-    const mobileBtn = document.getElementById("mobileBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
-    mobileBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
-    mobileMenu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
-    });
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow">
+            <h3 class="font-semibold text-lg mb-2">Landing Page</h3>
+            <p class="text-slate-300 mb-3 text-sm">
+              Simple, fast, and conversion-focused one-page website.
+            </p>
+            <div class="font-bold text-lp-blue">₹3,000 – ₹5,000</div>
+          </div>
 
-    // Set year
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
+          <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow">
+            <h3 class="font-semibold text-lg mb-2">Business Website</h3>
+            <p class="text-slate-300 mb-3 text-sm">
+              3–5 pages for service-based companies and small brands.
+            </p>
+            <div class="font-bold text-lp-indigo">₹6,000 – ₹10,000</div>
+          </div>
+
+          <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow">
+            <h3 class="font-semibold text-lg mb-2">Premium Website</h3>
+            <p class="text-slate-300 mb-3 text-sm">
+              Advanced UI, animations, SEO setup, and e-commerce ready.
+            </p>
+            <div class="font-bold text-lp-pink">₹10,000 – ₹15,000</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADDONS -->
+    <section id="addons" class="py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-10">Add-On Services</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-slate-800 p-6 rounded-xl text-center border border-slate-700">
+            <h4 class="font-semibold mb-2">Logo Design</h4>
+            <p class="text-lp-blue font-bold">₹799</p>
+          </div>
+          <div class="bg-slate-800 p-6 rounded-xl text-center border border-slate-700">
+            <h4 class="font-semibold mb-2">Content Writing</h4>
+            <p class="text-lp-indigo font-bold">₹699</p>
+          </div>
+          <div class="bg-slate-800 p-6 rounded-xl text-center border border-slate-700">
+            <h4 class="font-semibold mb-2">SEO Setup</h4>
+            <p class="text-lp-pink font-bold">₹999</p>
+          </div>
+          <div class="bg-slate-800 p-6 rounded-xl text-center border border-slate-700">
+            <h4 class="font-semibold mb-2">Website Maintenance</h4>
+            <p class="text-lp-blue font-bold">₹999/month</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section id="why" class="py-16 bg-slate-900/50 border-t border-slate-800">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-10">Why Choose LaunchPad Studio?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-6 bg-slate-800 rounded-xl border border-slate-700">
+            <div class="font-semibold mb-2">💡 Clean & Modern</div>
+            <p class="text-slate-300 text-sm">
+              Minimalist, professional designs crafted for conversions.
+            </p>
+          </div>
+          <div class="p-6 bg-slate-800 rounded-xl border border-slate-700">
+            <div class="font-semibold mb-2">⚙️ Fast & Optimized</div>
+            <p class="text-slate-300 text-sm">
+              SEO-friendly, mobile-ready, and performance-focused.
+            </p>
+          </div>
+          <div class="p-6 bg-slate-800 rounded-xl border border-slate-700">
+            <div class="font-semibold mb-2">🤝 Affordable & Transparent</div>
+            <p class="text-slate-300 text-sm">
+              Clear pricing, quick delivery, and real post-launch support.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-16">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-4">Let’s Build Something Great</h2>
+        <p class="text-slate-300 mb-6">
+          Ready to elevate your online presence? Get in touch with us today.
+        </p>
+        <div class="space-y-2 text-lg">
+          <p>
+            📞 <strong>+91 8500424768</strong>
+          </p>
+          <p>
+            ✉️
+            <a
+              href="mailto:hello@launchpadstudio.in"
+              class="text-lp-blue hover:underline"
+              >hello@launchpadstudio.vercel.app</a
+            >
+          </p>
+          <p>
+            📷
+            <a
+              href="https://instagram.com/launchpadstudio"
+              target="_blank"
+              class="text-lp-indigo hover:underline"
+              >@launchpadstudio</a
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 border-t border-slate-800">
+      <div class="max-w-6xl mx-auto px-6 text-center text-slate-400 text-sm">
+        <div>✨ LaunchPad Studio — We Build, You Grow.</div>
+        <div class="mt-1">
+          © <span id="year"></span> LaunchPad Studio. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
